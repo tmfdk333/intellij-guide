@@ -1,4 +1,7 @@
 # Inflearn - IntelliJ Guide
+
+![IntelliJIDEA_ReferenceCard_Win.png](https://github.com/tmfdk333/intellij-guide/blob/master/images/IntelliJIDEA_ReferenceCard_Win.png)
+
 > Reference Card에 없는 것 - <ins>명령어 설명</ins>
 
 ## [1] 코드 Edit
