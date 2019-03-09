@@ -93,3 +93,39 @@
 - Optimize imports **`Ctrl+Alt+O`**
     - 전체 코드에서 자동으로 Optimize imports: Ctrl+Shift+A → optimize imoprts on → ON
 - Reformat code **`Ctrl+Alt+L`**
+
+## [9] Appendix - 소개
+### 1. 강의 소개
+- 개발자의 자기계발: 사이드 프로젝트, 새로운 개발 언어, 새로운 프레임워크
+- 본인의 생산성이 낮은 상황이라면 공부 방법을 조금은 우회해도 좋지 않을까?
+- 생산성이 높아진다(IDEA 사용방법, 단축키를 잘 안다)면 조금 더 공부할 수 있는 양이 늘어날 것
+    - 같은 시간 내에 뽑아낼 수 있는 코드의 양이 다름(노가다의 양이 감소)
+
+### 2. Toolbox 소개
+- [Jetbrains](https://www.jetbrains.com)에서 Toolbox 설치 
+    - 설치한/설치할 수 있는 제품을 한눈에 볼 수 있음
+    - Toolbox의 Settings를 통해 각 제품의 설정 변경 가능
+        - Maximum heap size, Update to(Release, EAP - Preview)
+- **Community**: Java, Groovy, Gradle, Git 사용 가능
+    - Web에 관련된 Servlet, Tomcat, Spring, Spring Boot, JSP, JS는 사용할 수 없음
+- **Ultimate**: Web에 관련된 모든 것들을 사용 가능, 대부분의 회사에서 지원
+
+### 3. 프로젝트 생성
+1. Do not import settings → Darcula/Light → I've never used IDEA → Next → Next → Next → Start
+    - Create Launcher Script `None`
+    - Tune IDEA to your tasks `None` - Plugins: Maven, Gradle, Git, JUnit
+    - Download featured plugins `None`
+2. Create New Project → Gradle(Project Template)/Java
+     - JUnit(Test Code Library), Apache Common Lang(Utility library) 추가를 위해 Gradle 사용
+     - Maven/Gradle(의존성 관리 환경)을 쓰지 않으면 직접 jar 파일을 받아서 추가하기 때문
+3. GroupId(프로젝트 그룹): com.tmfdk333.inflearn, ArtifactId(그룹의 하위 모듈): intellij-guide
+4. Group modules: using explict module groups
+5. Project location 설정
+6. 프로젝트 생성 후 추가 설정
+     - Gradle projects need to be imported: Enable Auto-import
+     - Ctrl+Shift+A → plugins → Presentation Assistant → Install
+
+## [10] Reference
+- [jojoldu/community-guide](https://github.com/jojoldu/community-guide)
+- [ntelliJ를 시작하시는 분들을 위한 IntelliJ 가이드](https://www.inflearn.com/course/intellij-guide/)
+- [IntellijIDEA_ReferenceCard.pdf](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
