@@ -10,7 +10,7 @@
     - Directory `/`, Package `.` 로 하위 계층을 구분
 - Generate Code **`Alt+Insert`**
 - Live Template(Code Template) `psvm`, `sout`
-- Select configuration and run **`Alt+Shift+F10`**
+- Run context configuration from editor **`Ctrl+Shift+F10`**
 - Run **`Shift+F10`**
 
 ### 2. 라인 수정하기
@@ -93,6 +93,83 @@
 - Optimize imports **`Ctrl+Alt+O`**
     - 전체 코드에서 자동으로 Optimize imports: Ctrl+Shift+A → optimize imoprts on → ON
 - Reformat code **`Ctrl+Alt+L`**
+
+## [6] 디버깅
+
+> - ProductService의 line16에 BreakPoint - ProductService의 register메소드를 기준으로 Test 진행
+>     - ProductService 코드 설명
+>         - savedProduct는 productRepository를 통해 DB에 save한 후의 결과물
+>         - productRepository는 productService의 class 멤버 변수
+
+- Toggle breakpoint **`Ctrl+F8`**
+- Debug context configuration from editor **`NONE`** **`Ctrl+Shift+D`** 
+- Debug **`Ctrl+D`** **`Shift+F9`**
+- Resume **`F9`** - 다음 BreakPoint로 이동
+    - BreakPoint에 의해 멈춘 라인은 아직 실행 되기 전
+    - Call Stack - 현재 BreakPoint까지 어떤 Library/Framework/Method가 실행되었는지 보여줌
+    - Variables - 현재 BreakPoint에서 볼 수 있는 모든 값
+        - BreakPoint를 이용해 Variable에서 변화를 확인하면 결과값이나 코드의 흐름을 파악할 수 있음
+- Step Over **`F8`** - 현재 BreakPoint가 걸려 있는 상태의 다음 줄로 이동
+- Step Into **`F7`** - 현재 BreakPoint가 걸려 있는 줄에서 다음에 실행될 메소드로 이동
+- Step Out **`Shift+F8`** - Step Into로 들어왔을 때, 다시 현재 BreakPoint로 Focus 이동
+
+> - ConditionalBreakTest의 line19에 BreakPoint
+
+- <ins>Conditional Break</ins>: BreakPoint를 건 상태에서 rightClick 후 Condition에 조건 입력
+    - "자바 ORM 표준 JPA 프로그래밍".equals(book.title) 
+    - for문에서 BreakPoint를 걸 때 특정 값에만 Break되도록 할 때 등에 사용
+
+> - ProductServiceTest의 line44에 BreakPoint
+>     - productRepository `DAO`, save `Insert DB`, findByName `DB에서 운동화로 된 컬럼 찾기`
+>     - findByName을 사용하기 전에, productRepository로 넣은 3개의 값을 확인하고 싶을 때
+
+- Evaluate Expression **`Alt+F8`** - 현재 Break가 걸려있는 상태에서 코드를 실행해 볼 수 있음
+    - DB를 직접 확인하지 않고, 전체 데이터를 불러오고 싶지만 테스트 코드를 작성하기에 애매할 때
+        - product, service 코드에 넣지 않아도 되는 것들 
+    - 현재 Break된 상태에서 쓸 수 있는 모든 코드를 다 쓸 수 있고 연산까지도 가능
+        - `productRepository.findAll()`, `productRepository.findAll().size()`, `productRepository.findAll().get(0).getAmount()+100`
+    - 창을 새로 열 때마다 초기화 됨
+- <ins>Watch</ins> **`Insert`**
+    - product(지역변수)가 값이 어떻게 변하는지 Line별로 실시간으로 확인할 때 사용
+    - `product;` 선언 - Cannot find local variable 'product': 아직 44번 줄이 실행되지 않았기 때문.
+    -  Step Over로 넘기면 product에 값이 채워져 있는 것을 볼 수 있음
+- 정리
+    - Evaluate Expression - 현재 Break된 상태에서 단발성으로 쓸 수 있는 코드들을 사용
+    - Watch - Variables에서 Break된 시점부터 다음 Break까지 실시간으로 값이 변하는 것을 확인 가능
+    - 라이브러리/프레임워크를 분석할 때 매우 도움이 됨
+
+## [7] Git&Github
+### 1. Git 기본 기능 사용하기
+- <ins>Git View On</ins> **`Alt+9`** or **`View → Tool Windows → Version Control`**
+    - Local Changes - 최종 버전에서 어떤 파일들이 변경되었는지 확인 가능
+        - Show Diff `Ctrl+D` - 변경전/변경후, Diff 화면에서 비교하며 수정 가능
+        - Revert `Ctrl+Alt+Z` - 변경 내역을 취소
+    - Log - 현재 프로젝트의 Git 상태를 확인할 수 있음
+        - Commit Log를 우클릭을 하면 Commit 관련 기능(revert, branch, cherry-pick)을 사용 가능
+        - Commit Log, 파일 변경목록, commit message, 변경한 사람, 시간, 브랜치 등을 볼 수 있음
+    - Console - IntelliJ에서 사용한 Git 명령어들이 Cmd에서 어떻게 실행됐는지 로그를 보여줌
+        - Commit, Diff, CheryPick의 모든 내용이 기록으로 남으므로 오류가 났을 때는 Console을 확인 
+- <ins>Git Option Popup</ins> **`Alt+BackQuart`**
+    - Branch **`Ctrl+Shift+BackQuart`**, Git History **`NONE`**
+    - Git Pull **`NONE`** or **`Ctrl+Shift+A → git pull/VCS → Pull Changes  → Pull`**
+        - 어떤 내역이 pull받으면서 변경되었는지 확인 가능 
+    - Commit **`Ctrl+K`**
+        - Before Commit - Reformat code(코드 재정렬), Rearrange code
+        - Perform code analysis - SonarLint, FindBugs를  Commit 할 때마다 돌려볼 수 있음
+    - Push **`Ctrl+Shift+K`**
+        - 새로 만든 파일(Unversioned Files)은 Commit and Push가 불가능하므로 따로 Commit 후 Push
+
+### 2. Github 연동하기
+- <ins>기존 프로젝트에 Github 연동하기</ins>
+    - Ctrl+Shift+A → share github → Share Project on Github → Login to Github
+        - Auth Type: Password(보안 문제로 인해 SSH를 사용을 권장), Login/Password, Save credentials
+        - New repository name, Remote name, Description
+        - Add Files For Initial Commit, Commit Message
+- <ins>Github 프로젝트 Clone 받기</ins>
+    - Welcome to IntelliJ IDEA → Check out from Version Control → Git → URL 입력
+        - Login을 하면 Project URL 정보를 볼 수 있음
+    - Import Project → Gradle
+        - Use gradle 'wrapper' task configuration 
 
 ## [9] Appendix - 소개
 ### 1. 강의 소개
