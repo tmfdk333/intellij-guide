@@ -1,6 +1,7 @@
 # Inflearn - IntelliJ Guide
 
-![IntelliJIDEA_ReferenceCard_Win.png](https://github.com/tmfdk333/intellij-guide/blob/master/images/IntelliJIDEA_ReferenceCard_Win.png)
+![intelliJ_IDEA_reference_card_win](https://github.com/tmfdk333/intellij-guide/blob/master/images/intelliJ_IDEA_reference_card_win.png)
+![intelliJ_IDEA_reference_card_mac](https://github.com/tmfdk333/intellij-guide/blob/master/images/intelliJ_IDEA_reference_card_mac.png)
 
 > - <ins>명령어 설명</ins> - Reference Card에 없는 것
 > - `단축키` - window, `단축키` - macOS
@@ -9,7 +10,7 @@
 ### 1. 메인메소드 생성 및 실행
 - src/main/java - 평균적인 java의 디렉토리 구조
     - Directory `/`, Package `.` 로 하위 계층을 구분
-- Generate Code **`Alt+Insert`**
+- Generate Code **`Alt+Insert`**, **`Command+N`**
 - Live Template(Code Template) `psvm`, `sout`
 - Run context configuration from editor **`Ctrl+Shift+F10`**, **`Ctrl+Shift+R`**
 - Run **`Shift+F10`**, **`Ctrl+R`**
@@ -57,7 +58,7 @@
 ### 2. 검색 기타
 - Go to file **`Ctrl+Shift+N`**, **`Command+Shift+O`**
     - 패키지명까지 포함해서 검색 가능 - ex) sp2/Member
-- Go to symbol **`Ctrl+Alt+Shift+N`**, **`Option+Command+O`**
+- Go to symbol **`Ctrl+Alt+Shift+N`**, **`Command+Option+O`**
 - Find action **`Ctrl+Shift+A`**, **`Command+Shift+A`**
     - Intellij에서 할 수 있는 모든 Event와 Option을 찾을 수 있음 - ex) rename, theme
 - Recent files popup **`Ctrl+E`**, **`Command+E`**
@@ -155,10 +156,10 @@
         - Commit Log, 파일 변경목록, commit message, 변경한 사람, 시간, 브랜치 등을 볼 수 있음
     - Console - IntelliJ에서 사용한 Git 명령어들이 Cmd에서 어떻게 실행됐는지 로그를 보여줌
         - Commit, Diff, CheryPick의 모든 내용이 기록으로 남으므로 오류가 났을 때는 Console을 확인 
-- <ins>Git Option Popup</ins> **`Alt+BackQuart`**, **`Ctrl+V`**
-    - Branch **`Ctrl+Shift+BackQuart`**, **`NONE`** 
-    - Git History **`NONE`**, **`NONE`**
-    - Git Pull **`NONE`**, **`NONE`** (Ctrl/Command+Shift+A → git pull/VCS → Pull Changes  → Pull)
+- Git Option Popup **`Alt+BackQuote`**, **`Ctrl+V`**
+    - <ins>Branch</ins> **`Ctrl+Shift+BackQuote`**, **`NONE`** 
+    - <ins>Git History</ins> **`NONE`**, **`NONE`**
+    - <ins>Git Pull</ins> **`NONE`**, **`NONE`** (Ctrl/Command+Shift+A → git pull/VCS → Pull Changes  → Pull)
         - 어떤 내역이 pull받으면서 변경되었는지 확인 가능 
     - Commit **`Ctrl+K`**, **`Command+K`**
         - Before Commit - Reformat code(코드 재정렬), Rearrange code
@@ -223,3 +224,4 @@
 - [jojoldu/community-guide](https://github.com/jojoldu/community-guide)
 - [ntelliJ를 시작하시는 분들을 위한 IntelliJ 가이드](https://www.inflearn.com/course/intellij-guide/)
 - [IntellijIDEA_ReferenceCard.pdf](https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf)
+- [IntelliJ IDEA 2018.3 Help](https://www.jetbrains.com/help/idea/meet-intellij-idea.html)
