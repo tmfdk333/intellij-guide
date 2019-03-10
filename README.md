@@ -171,6 +171,16 @@
     - Import Project → Gradle
         - Use gradle 'wrapper' task configuration 
 
+## [8] 플러그인
+- 플러그인 설치: **`Ctrl+Shift+A`** → plugins → Plugins/Settings → sortBy:Downloads
+- 추천 플러그인 
+    - .gitignore: color, 자동완성, Framework나 Language에서 지원하는 ignore파일도 사용 가능
+    - Presentation Assistant: 단축키가 윈도우에서 어떻게 뜨는지 보여줌(발표나 시연할 때 좋음)
+    - BashSupport: Shell 파일을 만들 때가 많은데, intelliJ는 쉘파일을 지원하지 않음(ignore처럼)
+    - Material Theme UI: 개인의 취향에 따라 선택
+    - Translator: 번역 플러그인 - 강사(jojoldu)가 직접 제작한 플러그인, option+1/2/3
+- <ins>터미널 사용</ins> **`Alt+F12`**
+
 ## [9] Appendix - 소개
 ### 1. 강의 소개
 - 개발자의 자기계발: 사이드 프로젝트, 새로운 개발 언어, 새로운 프레임워크
