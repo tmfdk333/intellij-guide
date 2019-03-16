@@ -1,4 +1,4 @@
-# Inflearn - IntelliJ Guide
+# IntelliJ Guide - Inflearn
 
 ![intelliJ_IDEA_reference_card_win](https://github.com/tmfdk333/intellij-guide/blob/master/images/intelliJ_IDEA_reference_card_win.png)
 ![intelliJ_IDEA_reference_card_mac](https://github.com/tmfdk333/intellij-guide/blob/master/images/intelliJ_IDEA_reference_card_mac.png)
